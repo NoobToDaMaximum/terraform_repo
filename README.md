@@ -31,24 +31,44 @@ To use this terraform configuration, you need the following:
 
 Follow these steps to deploy the infrastructure to your Google Cloud account.
 
-<ol>
-    <li> <b>Clone the repositoriy:</b><br></li>
-    <code>git clone https://github.com/NoobToDaMaximum/terraform_repo.git<br>
-    cd terraform-github</code>
-    <li> <b>Initialize Terraform:</b><br></li>
-    <code>terraform init</code>
-    <li> <b>Create a `terraform.tfvars` file:</b><br></li>
-    Create a file named `terraform.tfvars` and add the following variables, replacing the values with your specific details:<br>
-    <code>project_id = "your-gcp-project-id"<br>
+### 1. Clone the repository:
+
+```
+    git clone https://github.com/NoobToDaMaximum/terraform_repo.git <br>
+    cd terraform-github
+```
+
+### 2. Initialize Terraform:
+
+```
+    terraform init
+```
+
+### 3. Create a `terraform.tfvars` file:
+
+Create a file named `terraform.tfvars` and add the following variables, replacing the values with your specific details:<br>
+
+```
+    project_id = "your-gcp-project-id"<br>
     project_name = "your-gcp-project-name"<br>
-    billing_account = "your-billing-account-id"</code>
-    <li> <b>Validate and Plan:</b><br></li>
-    Run `terraform plan` to see the resources that will be created without making any changes.<br>
-    <code>terraform plan</code>
-    <li> <b>Apply the changes:</b><br></li>
-    Run `terraform apply` to provision the infrastructure in your Google Cloud project. Confirm with `yes` when prompted.<br>
-    <code>terraform apply</code>
-</ol>
+    billing_account = "your-billing-account-id"
+```
+
+### 4. Validate and Plan:
+
+Run `terraform plan` to see the resources that will be created without making any changes.<br>
+
+```
+    terraform plan
+```
+
+### 5. Apply the changes:
+
+Run `terraform apply` to provision the infrastructure in your Google Cloud project. Confirm with `yes` when prompted.<br>
+
+```
+terraform apply
+```
 
 ### Outputs
 
@@ -64,6 +84,6 @@ After a successful `terraform apply`, the following key values will be displayed
 The core of the infrastructure is defined in `main.tf`, which uses the variables defined in `variables.tf`.
 
 <ul>
-<li><b>main.tf</b>: This file contains the primary resource definitions. It creates a Google Cloud project, enables necessary APIs, provisions a service account, and sets up two BigQuery datasets for a two-tier data architecture.</li>
-<li><b>variables.tf</b>: This file defines the input parameters for the configuration, making it reusable. These variables are used to specify the project ID, project name, and billing account.</li>
+    <li><b>main.tf</b>: This file contains the primary resource definitions. It creates a Google Cloud project, enables necessary APIs, provisions a service account, and sets up two BigQuery datasets for a two-tier data architecture.</li>
+    <li><b>variables.tf</b>: This file defines the input parameters for the configuration, making it reusable. These variables are used to specify the project ID, project name, and billing account.</li>
 </ul>
